@@ -1,13 +1,13 @@
-/* #a {
+#a {
   background-image: url('/Users/jasonjones/Desktop/Codesmith/cohort33/hackathon33/assets/PinClipart.com_motion-clipart_1236689.png');
   background-repeat: no-repeat;
   background-size: contain;
+  border: none;
   width: 200px;
   height: 200px;
   position: fixed;
   top: 20%;
   left: 70%;
-  border: transparent;
 }
 div.b {
   background-image: url('/Users/jasonjones/Desktop/Codesmith/cohort33/hackathon33/assets/cartoon-pictures-of-monsters-6.png');
@@ -19,7 +19,6 @@ div.b {
   transform: scaleX(-1);
   left: 50%;
   top: 50%;
-  display: none;
 }
 div.c {
   background-image: url('/Users/jasonjones/Desktop/Codesmith/cohort33/hackathon33/assets/PinClipart.com_stock-market-clipart_134576.png');
@@ -46,7 +45,7 @@ div.explode {
   background-repeat: no-repeat;
   background-size: contain;
   position: fixed;
-} */
+}
 
 #stage {
   position: relative;
@@ -72,7 +71,7 @@ div.explode {
   bottom: 2em;
 }
 /* initial state */
-#outerspace {
+/* #outerspace {
   position: relative;
   height: 400px;
   background: #0c0440 url(/images/outerspace.jpg);
@@ -97,7 +96,7 @@ div.rocket div {
   transition: 2s ease-in-out;
 }
 
-/* hover final state */
+/* hover final state 
 #outerspace:hover div.rocket {
   -webkit-transition: 1s bottom, 4s 1s left cubic-bezier(0, 1, 1, 1);
   -moz-transition: 1s bottom, 4s 1s left cubic-bezier(0, 1, 1, 1);
@@ -110,4 +109,4 @@ div.rocket div {
   -o-transform: rotate(70deg);
   -ms-transform: rotate(70deg);
   transform: rotate(70deg);
-}
+} */

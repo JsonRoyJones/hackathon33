@@ -73,42 +73,42 @@ class Monster {
       }
     }
 
-    this.node.css(position);
-    setTimeout(this.move.bind(this), this.SPEED);
-    // apple.node.css(position);
-    let applePos = $('#apple').position();
-    // control flow checking position values against
-    if (position.left === applePos.left && position.top === applePos.top) {
-      console.log('apple got ate');
-      // creating tail segment
-      // [{head}, {node}, {tail}]
-      // this.prevPosArr.push([position.top, position.left])
-      let tail = new Tail($('#board'));
-      this.tails.push(tail);
-      // changing position of tail segment
-      // let tailPos = $("#tail").position();
-      // $("#tail").css({
-      //   top: position.top,
-      //   left: position.left
-      // })
-      $('#apple').css({
-        top: Math.floor(Math.random() * Math.floor(14)) * 50,
-        left: Math.floor(Math.random() * Math.floor(14)) * 50
-      });
+    // this.node.css(position);
+    // setTimeout(this.move.bind(this), this.SPEED);
+    // // apple.node.css(position);
+    // let applePos = $('#apple').position();
+    // // control flow checking position values against
+    // if (position.left === applePos.left && position.top === applePos.top) {
+    //   console.log('apple got ate');
+    //   // creating tail segment
+    //   // [{head}, {node}, {tail}]
+    //   // this.prevPosArr.push([position.top, position.left])
+    //   let tail = new Tail($('#board'));
+    //   this.tails.push(tail);
+    //   // changing position of tail segment
+    //   // let tailPos = $("#tail").position();
+    //   // $("#tail").css({
+    //   //   top: position.top,
+    //   //   left: position.left
+    //   // })
+    //   $('#apple').css({
+    //     top: Math.floor(Math.random() * Math.floor(14)) * 50,
+    //     left: Math.floor(Math.random() * Math.floor(14)) * 50
+    //   });
 
-      // return alert("this is working")
-      // apple = null;
-    }
-    for (let i = 0; i < this.tails.length; i++) {
-      this.tails[i].node.css(this.prevPosArr[i + 1]);
-      if (
-        position.left === this.tails[i].node.position().left &&
-        position.top === this.tails[i].node.position().top
-      ) {
-        alert('Game over! Play again?');
-        location = location;
-        // } else { return alert('Thanks for playing!') }
-      }
-    }
+    //   // return alert("this is working")
+    //   // apple = null;
+    // }
+    // for (let i = 0; i < this.tails.length; i++) {
+    //   this.tails[i].node.css(this.prevPosArr[i + 1]);
+    //   if (
+    //     position.left === this.tails[i].node.position().left &&
+    //     position.top === this.tails[i].node.position().top
+    //   ) {
+    //     alert('Game over! Play again?');
+    //     location = location;
+    //     // } else { return alert('Thanks for playing!') }
+    //   }
+    // }
   }
 }
