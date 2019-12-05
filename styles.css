@@ -1,0 +1,12 @@
+#overlay {
+  height: 100%;
+  width: 100%;
+  border: 1px black solid;
+  position: relative;
+}
+
+.monster {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+}
