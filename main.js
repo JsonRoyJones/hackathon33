@@ -1,34 +1,81 @@
 $(document).ready(function() {
-  const monster = new Monster($('#overlay'));
-  $('body').on('keydown', function(e) {
-    if (e.keyCode === 37) {
-      // control flow to limit backwards movement
-      if (monster.currentDirection !== 'right') {
-        // console.log('pressed left');
-        monster.currentDirection = 'left';
-        // change offset of tail
-      }
-    }
-    if (e.keyCode === 38) {
-      // control flow to limit backwards movement
-      if (monster.currentDirection !== 'down') {
-        // console.log('pressed up');
-        monster.currentDirection = 'up';
-      }
-    }
-    if (e.keyCode === 39) {
-      // control flow to limit backwards movement
-      if (monster.currentDirection !== 'left') {
-        // console.log('pressed right');
-        monster.currentDirection = 'right';
-      }
-    }
-    if (e.keyCode === 40) {
-      // control flow to limit backwards movement
-      if (monster.currentDirection !== 'up') {
-        // console.log('pressed down');
-        monster.currentDirection = 'down';
-      }
-    }
+  let monsterA = $('#a');
+  $('#a').click(function clickBoom() {
+    this.node = $('<img id="a"></img>');
+    console.log('clicked ', this.node);
+    // this.node.attr('display', 'none');
+    $('#a').detach();
+    console.log('detached');
+    // a.style.left = x_pos + 'px';
+    // a.style.top = y_pos + 'px';
+    // new Monster('body');
+    $(this.node).appendTo('body');
+    console.log('appended to body', this.node);
+    this.node.css({
+      top: Math.floor(Math.random() * Math.floor(14)) * 50,
+      left: Math.floor(Math.random() * Math.floor(14)) * 50
+    });
+    animateDiv($('#a'));
+    console.log('div animated');
+
+    // $(this).attr(
+    //   'src',
+    //   '/Users/jasonjones/Desktop/Codesmith/cohort33/hackathon33/assets/explode.png'
+    // );
+    // );
+    // change img to explosion
+    // play explosion audio
+    // randomize position
   });
+  monsterA.click(() => console.log('clicked A'));
+  animateDiv(monsterA);
+  console.log('another div animated');
+  // new Monster($('.a'));
 });
+let monsterB = $('.b');
+$('.b').click(() => console.log('clicked B'));
+animateDiv(monsterB);
+
+let monsterC = $('.c');
+$('.c').click(() => console.log('clicked C'));
+animateDiv(monsterC);
+
+let monsterD = $('.d');
+$('.d').click(() => console.log('clicked D'));
+animateDiv(monsterD);
+// this works, but needs tweaking
+// let monster = new Monster($('.a'));
+
+function makeNewPosition() {
+  // Get viewport dimensions (remove the dimension of the div)
+  var h = $(window).height() - 50;
+  var w = $(window).width() - 50;
+
+  var nh = Math.floor(Math.random() * h);
+  var nw = Math.floor(Math.random() * w);
+
+  return [nh, nw];
+}
+
+function animateDiv(alphabet) {
+  var newq = makeNewPosition();
+  var oldq = alphabet.offset();
+  var speed = calcSpeed([oldq.top, oldq.left], newq);
+  console.log(alphabet.position().top, alphabet.position().left);
+  alphabet.animate({ top: newq[0], left: newq[1] }, speed, function() {
+    animateDiv(alphabet);
+  });
+}
+
+function calcSpeed(prev, next) {
+  var x = Math.abs(prev[1] - next[1]);
+  var y = Math.abs(prev[0] - next[0]);
+
+  var greatest = x > y ? x : y;
+
+  var speedModifier = 0.1;
+
+  var speed = Math.ceil(greatest / speedModifier);
+
+  return speed;
+}
