@@ -7,11 +7,11 @@ $(document).ready(function() {
   // change img to explosion
   // play explosion audio
   // randomize position
-  let monsterA = $('#a');
+  let monsterA = $('.a');
   animateDiv(monsterA);
   // console.log('another div animated');
   new Monster(monsterA);
-  animateDiv($('#a'));
+  animateDiv($('.a'));
   let monsterB = $('.b');
   $('.b').click(() => console.log('clicked B'));
   animateDiv(monsterB);
@@ -45,11 +45,11 @@ function animateDiv(alphabet) {
   alphabet.animate({ top: newq[0], left: newq[1] }, speed, function() {
     animateDiv(alphabet);
   });
-  $('#a').click(function clickBoom() {
-    this.node = $('<img id="a"></img>');
+  $('.a').click(function clickBoom() {
+    this.node = $('<div class="a"></div>');
     // console.log('clicked ', this.node);
     // this.node.attr('display', 'none');
-    $('#a').detach();
+    $('.a').detach();
     // console.log('detached');
     // a.style.left = x_pos + 'px';
     // a.style.top = y_pos + 'px';

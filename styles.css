@@ -1,4 +1,4 @@
-#a {
+div.a {
   background-image: url('/Users/jasonjones/Desktop/Codesmith/cohort33/hackathon33/assets/PinClipart.com_motion-clipart_1236689.png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -47,12 +47,12 @@ div.explode {
   position: fixed;
 }
 
-#stage {
+/* #stage {
   position: relative;
   height: 4em;
   background: #efefef;
   text-align: center;
-}
+} */
 #box {
   position: absolute;
   left: 0;
